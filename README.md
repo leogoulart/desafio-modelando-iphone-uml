@@ -1,11 +1,17 @@
 ```mermaid
 classDiagram
 
+class Musica{
+  - String url;
+  - String nome;
+  - final double duracao;
+}
+
 class ReprodutorMusical{
   <<interface>>
   + tocar() void
   + pausar() void
-  + selecionarMusica(String musica) void
+  + selecionarMusica(Musica musica) void
 }
 
 class AparelhoTelefonico{
@@ -22,6 +28,8 @@ NavegadorInternet : + adicionarNovaAba() void
 NavegadorInternet : + atualizarPagina() void
 
 class Iphone
+
+Musica --> ReprodutorMusical
 
 Iphone --> ReprodutorMusical
 Iphone --> AparelhoTelefonico
